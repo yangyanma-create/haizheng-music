@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: '海正音樂',
-  description: '裘海正官方音樂專頁',
+  title: '非我勇敢 — 裘海正',
+  description: '裘海正 2016 年專輯《非我勇敢》',
 }
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-TW">
-      <body className="bg-black text-white min-h-screen">
+      <body className="text-white min-h-screen">
         {children}
       </body>
     </html>

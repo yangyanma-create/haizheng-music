@@ -13,15 +13,22 @@ export default function SocialLinks({ social, buyLink }: Props) {
     { label: '購買專輯', href: buyLink },
   ].filter((l) => l.href)
 
+  if (links.length === 0) return null
+
   return (
-    <div className="flex flex-wrap justify-center gap-3 mt-8">
+    <div className="flex flex-wrap justify-center gap-2 mt-10">
       {links.map((link) => (
         <a
           key={link.label}
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-4 py-2 border border-white/30 text-white/70 rounded-full text-sm hover:border-white hover:text-white transition"
+          className="px-4 py-2 rounded-full text-xs font-medium transition-all"
+          style={{
+            border: '1px solid rgba(123,94,167,0.4)',
+            color: '#a89ec8',
+            background: 'rgba(123,94,167,0.08)',
+          }}
         >
           {link.label}
         </a>

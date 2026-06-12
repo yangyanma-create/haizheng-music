@@ -26,13 +26,15 @@ export default async function TrackPage({ params }: Props) {
       {/* 返回按鈕 */}
       <Link
         href="/"
-        className="self-start text-gray-400 hover:text-white text-sm mb-8 transition"
+        className="self-start text-sm mb-10 transition-colors hover:text-white"
+        style={{ color: '#6b6080' }}
       >
         ← 返回專輯
       </Link>
 
       {/* 單曲封面 */}
-      <div className="w-56 h-56 relative mb-6 rounded-lg overflow-hidden shadow-2xl">
+      <div className="w-48 h-48 relative mb-6 rounded-2xl overflow-hidden"
+           style={{ boxShadow: '0 0 50px rgba(123, 94, 167, 0.5), 0 15px 30px rgba(0,0,0,0.5)' }}>
         <Image
           src={track.cover}
           alt={track.title}
@@ -43,7 +45,8 @@ export default async function TrackPage({ params }: Props) {
       </div>
 
       {/* 歌名 */}
-      <h1 className="text-2xl font-bold mb-6">{track.title}</h1>
+      <h1 className="text-2xl font-bold mb-1">{track.title}</h1>
+      <p className="text-sm mb-8" style={{ color: '#a89ec8' }}>裘海正</p>
 
       {/* 串流按鈕 */}
       <StreamingButtons
@@ -58,23 +61,29 @@ export default async function TrackPage({ params }: Props) {
           href={track.buyLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-3 text-sm text-gray-400 hover:text-white underline transition"
+          className="mt-4 text-xs transition-colors hover:text-white"
+          style={{ color: '#6b6080' }}
         >
           購買實體專輯
         </a>
       )}
 
+      {/* 分隔線 */}
+      <div className="w-full h-px my-10" style={{ background: 'linear-gradient(90deg, transparent, #7b5ea7, transparent)' }} />
+
       {/* 歌詞 */}
-      <section className="mt-10 w-full">
-        <h2 className="text-lg font-semibold mb-4 text-gray-300">歌詞</h2>
-        <Lyrics lyrics={track.lyrics} />
-      </section>
+      {track.lyrics && track.lyrics !== '（純音樂）' && (
+        <section className="w-full mb-10">
+          <h2 className="text-xs font-semibold tracking-widest mb-5 uppercase" style={{ color: '#7b5ea7' }}>歌詞</h2>
+          <Lyrics lyrics={track.lyrics} />
+        </section>
+      )}
 
       {/* 創作背景 */}
       {track.story && (
-        <section className="mt-10 w-full">
-          <h2 className="text-lg font-semibold mb-4 text-gray-300">創作背景</h2>
-          <p className="text-gray-400 leading-relaxed">{track.story}</p>
+        <section className="w-full">
+          <h2 className="text-xs font-semibold tracking-widest mb-4 uppercase" style={{ color: '#7b5ea7' }}>創作背景</h2>
+          <p className="text-sm leading-relaxed" style={{ color: '#8a7fa8' }}>{track.story}</p>
         </section>
       )}
     </main>
