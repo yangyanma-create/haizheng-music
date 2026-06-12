@@ -16,9 +16,12 @@ export type Track = {
 
 export type Album = {
   title: string
+  titleEn: string
   year: string
   cover: string
   description: string
+  taglines: string[]
+  credits: string[]
   social: {
     instagram: string
     facebook: string
