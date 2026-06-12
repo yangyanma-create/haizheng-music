@@ -9,3 +9,8 @@
 .font-playfair {
   font-family: var(--font-playfair), Georgia, serif;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

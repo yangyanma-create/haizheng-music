@@ -48,7 +48,7 @@ export default function Home() {
 
       {/* 頂部標題 */}
       <div className="relative z-10 text-center pt-12 pb-6">
-        <p className="text-xs text-white/40 tracking-[0.3em] uppercase mb-2">Chiou Haizheng</p>
+        <p className="text-xs text-white/40 tracking-widest uppercase mb-2">Chiou Haizheng</p>
         <h1 className="font-playfair text-2xl font-bold text-white tracking-wide">非我勇敢</h1>
         <p className="text-xs text-white/30 mt-1 tracking-widest italic font-playfair">I Am Not Brave · 2016</p>
       </div>
@@ -74,8 +74,8 @@ export default function Home() {
               key={track.slug}
               href={`/track/${track.slug}`}
               data-index={index}
-              className="flex-shrink-0 mr-4"
-              style={{ scrollSnapAlign: 'center' }}
+              className="flex-shrink-0 mr-4 no-underline"
+              style={{ scrollSnapAlign: 'center', color: 'inherit', textDecoration: 'none' }}
             >
               <div
                 className="rounded-2xl overflow-hidden transition-all duration-500 flex flex-col"
@@ -127,7 +127,7 @@ export default function Home() {
           href="/tracklist"
           data-index={tracks.length}
           className="flex-shrink-0 mr-4"
-          style={{ scrollSnapAlign: 'center' }}
+          style={{ scrollSnapAlign: 'center', color: 'inherit', textDecoration: 'none' }}
         >
           <div
             className="rounded-2xl flex flex-col items-center justify-center transition-all duration-500"
