@@ -37,7 +37,7 @@ export default async function TrackPage({ params }: Props) {
       {/* 歌名區 — 圖片下方 */}
       <div style={{ padding: '20px 24px 16px', maxWidth: '400px', margin: '0 auto', width: '100%', boxSizing: 'border-box' }}>
         <p style={{ fontSize: '10px', letterSpacing: '0.2em', color: '#aaa', textTransform: 'uppercase', marginBottom: '6px' }}>
-          裘海正 · Chiou Haizheng
+          裘海正 · Donna Chiu
         </p>
         <h1 className="font-zcool" style={{ fontSize: '32px', color: '#1a1a1a', margin: '0 0 4px', lineHeight: 1.2 }}>
           {track.title}

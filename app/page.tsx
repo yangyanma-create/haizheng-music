@@ -36,7 +36,7 @@ export default function Home() {
       {/* 頂部 */}
       <div style={{ textAlign: 'center', paddingTop: '52px', paddingBottom: '24px' }}>
         <p style={{ fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#888', marginBottom: '6px', fontFamily: 'var(--font-playfair)' }}>
-          Chiou Haizheng
+          Donna Chiu
         </p>
         <h1 className="font-zcool" style={{ fontSize: '28px', fontWeight: 'bold', color: '#1a1a1a', margin: '0 0 4px' }}>
           非我勇敢
