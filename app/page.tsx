@@ -29,43 +29,37 @@ export default function Home() {
   }, [])
 
   const totalCards = tracks.length + 1
-  const currentTrack = activeIndex < tracks.length ? tracks[activeIndex] : null
 
   return (
-    <div className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* 模糊背景 */}
-      <div className="fixed inset-0 z-0 overflow-hidden">
-        <Image
-          src={currentTrack ? currentTrack.cover : album.cover}
-          alt=""
-          fill
-          className="object-cover scale-125 transition-all duration-700"
-          style={{ filter: 'blur(60px)' }}
-          priority
-        />
-        <div className="absolute inset-0" style={{ background: 'rgba(6, 4, 16, 0.85)' }} />
-      </div>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#f0ebe3' }}>
 
-      {/* 頂部標題 */}
-      <div className="relative z-10 text-center pt-12 pb-4">
-        <p className="text-xs tracking-widest uppercase mb-1" style={{ color: 'rgba(255,255,255,0.6)' }}>Chiou Haizheng</p>
-        <h1 className="font-zcool text-2xl font-bold tracking-wide" style={{ color: '#ffffff' }}>非我勇敢</h1>
-        <p className="text-xs mt-1 tracking-widest italic font-playfair" style={{ color: 'rgba(255,255,255,0.6)' }}>I Am Not Brave · 2016</p>
+      {/* 頂部 */}
+      <div style={{ textAlign: 'center', paddingTop: '52px', paddingBottom: '24px' }}>
+        <p style={{ fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#888', marginBottom: '6px', fontFamily: 'var(--font-playfair)' }}>
+          Chiou Haizheng
+        </p>
+        <h1 className="font-zcool" style={{ fontSize: '28px', fontWeight: 'bold', color: '#1a1a1a', margin: '0 0 4px' }}>
+          非我勇敢
+        </h1>
+        <p style={{ fontSize: '12px', color: '#aaa', fontStyle: 'italic', fontFamily: 'var(--font-playfair)' }}>
+          I Am Not Brave · 2016
+        </p>
       </div>
 
       {/* 滑動卡片 */}
       <div
         ref={scrollRef}
-        className="relative z-10 flex items-center py-6"
         style={{
+          display: 'flex',
+          alignItems: 'flex-start',
           overflowX: 'scroll',
           scrollSnapType: 'x mandatory',
           scrollbarWidth: 'none',
-          msOverflowStyle: 'none',
           WebkitOverflowScrolling: 'touch',
+          paddingBottom: '8px',
         }}
       >
-        <div className="flex-shrink-0" style={{ width: 'calc(50vw - 130px)' }} />
+        <div style={{ flexShrink: 0, width: 'calc(50vw - 130px)' }} />
 
         {tracks.map((track, index) => {
           const isActive = activeIndex === index
@@ -74,46 +68,38 @@ export default function Home() {
               key={track.slug}
               href={`/track/${track.slug}`}
               data-index={index}
-              className="flex-shrink-0 mr-4 no-underline"
-              style={{ scrollSnapAlign: 'center', color: 'inherit', textDecoration: 'none' }}
+              style={{ flexShrink: 0, marginRight: '16px', scrollSnapAlign: 'center', textDecoration: 'none', color: 'inherit' }}
             >
               <div
                 style={{
-                  width: '260px',
-                  height: '360px',
-                  borderRadius: '24px',
-                  overflow: 'hidden',
-                  position: 'relative',
+                  width: '240px',
                   transition: 'all 0.5s',
-                  boxShadow: isActive
-                    ? '0 32px 80px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.1)'
-                    : '0 8px 24px rgba(0,0,0,0.4)',
                   opacity: isActive ? 1 : 0.5,
-                  transform: isActive ? 'scale(1) translateY(0px)' : 'scale(0.88) translateY(16px)',
+                  transform: isActive ? 'scale(1) translateY(0)' : 'scale(0.92) translateY(10px)',
                 }}
               >
-                {/* 封面圖片 — 全滿 */}
-                <Image
-                  src={track.cover}
-                  alt={track.title}
-                  fill
-                  className="object-cover"
-                />
+                {/* 封面圖 */}
+                <div style={{
+                  width: '240px',
+                  height: '300px',
+                  borderRadius: '20px',
+                  overflow: 'hidden',
+                  position: 'relative',
+                  boxShadow: isActive ? '0 16px 48px rgba(0,0,0,0.18)' : '0 4px 16px rgba(0,0,0,0.08)',
+                  marginBottom: '16px',
+                }}>
+                  <Image src={track.cover} alt={track.title} fill style={{ objectFit: 'cover' }} />
+                </div>
 
-                {/* 底部漸層 + 歌名 */}
-                <div
-                  className="absolute inset-x-0 bottom-0 px-5 pb-5 pt-16"
-                  style={{
-                    background: 'linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.4) 60%, transparent 100%)',
-                  }}
-                >
-                  <p className="text-[10px] tracking-[0.2em] uppercase mb-1" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                {/* 文字 — 圖片下方 */}
+                <div style={{ paddingLeft: '4px' }}>
+                  <p style={{ fontSize: '10px', letterSpacing: '0.18em', color: '#aaa', textTransform: 'uppercase', marginBottom: '4px' }}>
                     {String(index + 1).padStart(2, '0')}
                   </p>
-                  <h2 className="font-zcool text-xl font-bold leading-tight mb-0.5" style={{ color: '#ffffff' }}>
+                  <h2 className="font-zcool" style={{ fontSize: '20px', color: '#1a1a1a', margin: '0 0 2px', lineHeight: 1.3 }}>
                     {track.title}
                   </h2>
-                  <p className="text-xs italic font-playfair" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                  <p style={{ fontSize: '12px', color: '#999', fontStyle: 'italic', fontFamily: 'var(--font-playfair)', margin: 0 }}>
                     {track.titleEn}
                   </p>
                 </div>
@@ -126,51 +112,61 @@ export default function Home() {
         <Link
           href="/tracklist"
           data-index={tracks.length}
-          className="flex-shrink-0 mr-4"
-          style={{ scrollSnapAlign: 'center', color: 'inherit', textDecoration: 'none' }}
+          style={{ flexShrink: 0, marginRight: '16px', scrollSnapAlign: 'center', textDecoration: 'none', color: 'inherit' }}
         >
-          <div
-            style={{
-              width: '260px',
-              height: '360px',
-              borderRadius: '24px',
+          <div style={{
+            width: '240px',
+            transition: 'all 0.5s',
+            opacity: activeIndex === tracks.length ? 1 : 0.5,
+            transform: activeIndex === tracks.length ? 'scale(1) translateY(0)' : 'scale(0.92) translateY(10px)',
+          }}>
+            <div style={{
+              width: '240px',
+              height: '300px',
+              borderRadius: '20px',
+              background: '#e5ddd4',
+              border: '1px solid #d5ccc2',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              transition: 'all 0.5s',
-              background: 'rgba(255,255,255,0.06)',
-              border: '1px solid rgba(255,255,255,0.12)',
-              opacity: activeIndex === tracks.length ? 1 : 0.5,
-              transform: activeIndex === tracks.length ? 'scale(1) translateY(0px)' : 'scale(0.88) translateY(16px)',
-            }}
-          >
-            <p className="text-5xl mb-5 font-light" style={{ color: '#ffffff' }}>≡</p>
-            <p className="font-playfair text-xl font-bold mb-1" style={{ color: '#ffffff' }}>Full Album</p>
-            <p className="text-xs tracking-widest" style={{ color: 'rgba(255,255,255,0.6)' }}>完整曲目</p>
-            <p className="text-xs mt-2" style={{ color: 'rgba(255,255,255,0.4)' }}>{tracks.length} Tracks</p>
+              marginBottom: '16px',
+              boxShadow: activeIndex === tracks.length ? '0 16px 48px rgba(0,0,0,0.12)' : '0 4px 16px rgba(0,0,0,0.06)',
+            }}>
+              <p style={{ fontSize: '40px', color: '#888', marginBottom: '12px' }}>≡</p>
+              <p className="font-playfair" style={{ fontSize: '18px', fontWeight: 'bold', color: '#1a1a1a', marginBottom: '4px' }}>Full Album</p>
+              <p style={{ fontSize: '11px', color: '#aaa', letterSpacing: '0.1em' }}>{tracks.length} Tracks</p>
+            </div>
+            <div style={{ paddingLeft: '4px' }}>
+              <p style={{ fontSize: '10px', letterSpacing: '0.18em', color: '#aaa', textTransform: 'uppercase', marginBottom: '4px' }}>
+                {String(tracks.length + 1).padStart(2, '0')}
+              </p>
+              <h2 className="font-zcool" style={{ fontSize: '20px', color: '#1a1a1a', margin: '0 0 2px' }}>完整曲目</h2>
+              <p style={{ fontSize: '12px', color: '#999', fontStyle: 'italic', fontFamily: 'var(--font-playfair)', margin: 0 }}>Full Tracklist</p>
+            </div>
           </div>
         </Link>
 
-        <div className="flex-shrink-0" style={{ width: 'calc(50vw - 130px)' }} />
+        <div style={{ flexShrink: 0, width: 'calc(50vw - 130px)' }} />
       </div>
 
       {/* 底部指示器 */}
-      <div className="relative z-10 text-center pb-10 pt-2">
-        <div className="flex justify-center gap-1.5 mb-4">
+      <div style={{ textAlign: 'center', paddingTop: '20px', paddingBottom: '40px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '6px', marginBottom: '12px' }}>
           {Array.from({ length: totalCards }).map((_, i) => (
             <div
               key={i}
-              className="rounded-full transition-all duration-300"
               style={{
-                width: activeIndex === i ? '18px' : '5px',
                 height: '5px',
-                background: activeIndex === i ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.25)',
+                borderRadius: '9999px',
+                transition: 'all 0.3s',
+                width: activeIndex === i ? '18px' : '5px',
+                background: activeIndex === i ? '#1a1a1a' : '#ccc',
               }}
             />
           ))}
         </div>
-        <p className="text-[10px] tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>Swipe to explore</p>
+        <p style={{ fontSize: '10px', letterSpacing: '0.2em', color: '#bbb', textTransform: 'uppercase' }}>Swipe to explore</p>
       </div>
     </div>
   )

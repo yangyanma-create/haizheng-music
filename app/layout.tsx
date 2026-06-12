@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-TW" className={`${playfair.variable} ${zcool.variable}`}>
-      <body className="text-white min-h-screen" style={{ background: '#0a0614' }}>
+      <body style={{ background: '#f0ebe3', color: '#1a1a1a', minHeight: '100vh', margin: 0 }}>
         {children}
       </body>
     </html>

@@ -5,35 +5,38 @@ type Props = {
 }
 
 export default function StreamingButtons({ spotify, appleMusic, youtube }: Props) {
+  const buttons = [
+    { label: 'Spotify', href: spotify, bg: '#1a1a1a', color: '#fff' },
+    { label: 'Apple Music', href: appleMusic, bg: '#fff', color: '#1a1a1a', border: '1px solid #e0d8cf' },
+    { label: 'YouTube', href: youtube, bg: '#fff', color: '#1a1a1a', border: '1px solid #e0d8cf' },
+  ]
+
   return (
-    <div className="flex flex-col gap-2 w-full max-w-[240px] mx-auto">
-      <a
-        href={spotify}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-center py-3 px-6 rounded-full text-sm font-semibold transition-opacity hover:opacity-85"
-        style={{ background: '#1DB954', color: '#fff' }}
-      >
-        Spotify
-      </a>
-      <a
-        href={appleMusic}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-center py-3 px-6 rounded-full text-sm font-semibold transition-opacity hover:opacity-85"
-        style={{ background: 'linear-gradient(135deg, #fc3c44 0%, #ff6b6b 100%)', color: '#fff' }}
-      >
-        Apple Music
-      </a>
-      <a
-        href={youtube}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-center py-3 px-6 rounded-full text-sm font-semibold transition-opacity hover:opacity-85"
-        style={{ background: '#FF0000', color: '#fff' }}
-      >
-        YouTube
-      </a>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '100%' }}>
+      {buttons.map(({ label, href, bg, color, border }) => (
+        <a
+          key={label}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '14px 24px',
+            borderRadius: '999px',
+            fontSize: '14px',
+            fontWeight: 600,
+            background: bg,
+            color,
+            border: border ?? 'none',
+            textDecoration: 'none',
+            letterSpacing: '0.02em',
+          }}
+        >
+          {label}
+        </a>
+      ))}
     </div>
   )
 }

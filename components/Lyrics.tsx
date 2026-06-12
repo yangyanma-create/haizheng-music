@@ -7,7 +7,7 @@ export default function Lyrics({ lyrics }: Props) {
   return (
     <div className="space-y-4">
       {paragraphs.map((paragraph, i) => (
-        <p key={i} className="whitespace-pre-line text-sm leading-7" style={{ color: '#ffffff' }}>
+        <p key={i} className="whitespace-pre-line text-sm leading-7" style={{ color: '#333', whiteSpace: 'pre-line' }}>
           {paragraph}
         </p>
       ))}
