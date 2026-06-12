@@ -17,81 +17,101 @@ export default async function TrackPage({ params }: Props) {
   const { slug } = await params
   const track = getTrackBySlug(slug)
 
-  if (!track) {
-    notFound()
-  }
+  if (!track) notFound()
 
   return (
-    <main className="flex flex-col items-center px-6 py-12 max-w-lg mx-auto">
-      {/* 返回按鈕 */}
-      <Link
-        href="/"
-        className="self-start text-sm mb-10 transition-colors hover:text-white"
-        style={{ color: '#6b6080' }}
-      >
-        ← 返回專輯
-      </Link>
-
-      {/* 單曲封面 */}
-      <div
-          className="relative mb-6 rounded-2xl overflow-hidden flex-shrink-0"
-          style={{
-            width: '192px',
-            height: '192px',
-            boxShadow: '0 0 50px rgba(123, 94, 167, 0.5), 0 15px 30px rgba(0,0,0,0.5)'
-          }}
-        >
+    <div className="relative min-h-screen flex flex-col items-center">
+      {/* 模糊背景 */}
+      <div className="fixed inset-0 z-0">
         <Image
           src={track.cover}
-          alt={track.title}
+          alt=""
           fill
-          className="object-cover"
+          className="object-cover scale-110"
           priority
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: 'rgba(10, 8, 20, 0.80)', backdropFilter: 'blur(40px)', WebkitBackdropFilter: 'blur(40px)' }}
         />
       </div>
 
-      {/* 歌名 */}
-      <h1 className="text-2xl font-bold mb-1">{track.title}</h1>
-      <p className="text-sm mb-8" style={{ color: '#a89ec8' }}>裘海正</p>
+      {/* 內容 */}
+      <main className="relative z-10 flex flex-col items-center px-6 py-12 w-full max-w-sm mx-auto">
+        {/* 返回 */}
+        <Link href="/" className="self-start text-xs text-white/40 hover:text-white/70 transition mb-8">
+          ← 返回專輯
+        </Link>
 
-      {/* 串流按鈕 */}
-      <StreamingButtons
-        spotify={track.spotify}
-        appleMusic={track.appleMusic}
-        youtube={track.youtube}
-      />
-
-      {/* 購買連結 */}
-      {track.buyLink && (
-        <a
-          href={track.buyLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 text-xs transition-colors hover:text-white"
-          style={{ color: '#6b6080' }}
+        {/* 封面 */}
+        <div
+          className="rounded-2xl overflow-hidden mb-5 flex-shrink-0"
+          style={{
+            width: '176px',
+            height: '176px',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08)',
+          }}
         >
-          購買實體專輯
-        </a>
-      )}
+          <Image
+            src={track.cover}
+            alt={track.title}
+            width={176}
+            height={176}
+            className="object-cover w-full h-full"
+            priority
+          />
+        </div>
 
-      {/* 分隔線 */}
-      <div className="w-full h-px my-10" style={{ background: 'linear-gradient(90deg, transparent, #7b5ea7, transparent)' }} />
+        {/* 歌名 */}
+        <h1 className="text-xl font-bold text-white mb-1 text-center">{track.title}</h1>
+        <p className="text-xs text-white/50 mb-7 text-center">裘海正</p>
 
-      {/* 歌詞 */}
-      {track.lyrics && track.lyrics !== '（純音樂）' && (
-        <section className="w-full mb-10">
-          <h2 className="text-xs font-semibold tracking-widest mb-5 uppercase" style={{ color: '#7b5ea7' }}>歌詞</h2>
-          <Lyrics lyrics={track.lyrics} />
-        </section>
-      )}
+        {/* 串流按鈕 */}
+        <StreamingButtons
+          spotify={track.spotify}
+          appleMusic={track.appleMusic}
+          youtube={track.youtube}
+        />
 
-      {/* 創作背景 */}
-      {track.story && (
-        <section className="w-full">
-          <h2 className="text-xs font-semibold tracking-widest mb-4 uppercase" style={{ color: '#7b5ea7' }}>創作背景</h2>
-          <p className="text-sm leading-relaxed" style={{ color: '#8a7fa8' }}>{track.story}</p>
-        </section>
-      )}
-    </main>
+        {track.buyLink && (
+          <a href={track.buyLink} target="_blank" rel="noopener noreferrer"
+             className="mt-3 text-xs text-white/30 hover:text-white/60 transition">
+            購買實體專輯
+          </a>
+        )}
+
+        {/* 歌詞 */}
+        {track.lyrics && track.lyrics !== '（純音樂）' && (
+          <div
+            className="w-full rounded-2xl p-5 mt-8"
+            style={{
+              background: 'rgba(255,255,255,0.05)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255,255,255,0.08)',
+            }}
+          >
+            <p className="text-xs text-white/40 tracking-widest uppercase mb-4">歌詞</p>
+            <Lyrics lyrics={track.lyrics} />
+          </div>
+        )}
+
+        {/* 創作背景 */}
+        {track.story && (
+          <div
+            className="w-full rounded-2xl p-5 mt-4"
+            style={{
+              background: 'rgba(255,255,255,0.05)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255,255,255,0.08)',
+            }}
+          >
+            <p className="text-xs text-white/40 tracking-widest uppercase mb-3">創作背景</p>
+            <p className="text-sm text-white/60 leading-relaxed">{track.story}</p>
+          </div>
+        )}
+      </main>
+    </div>
   )
 }
