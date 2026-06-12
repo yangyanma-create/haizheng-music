@@ -22,18 +22,16 @@ export default async function TrackPage({ params }: Props) {
   return (
     <div className="relative min-h-screen flex flex-col items-center">
       {/* 模糊背景 */}
-      <div className="fixed inset-0 z-0">
+      <div className="fixed inset-0 z-0 overflow-hidden">
         <Image
           src={track.cover}
           alt=""
           fill
-          className="object-cover scale-110"
+          className="object-cover scale-125"
+          style={{ filter: 'blur(50px)' }}
           priority
         />
-        <div
-          className="absolute inset-0"
-          style={{ background: 'rgba(10, 8, 20, 0.80)', backdropFilter: 'blur(40px)', WebkitBackdropFilter: 'blur(40px)' }}
-        />
+        <div className="absolute inset-0" style={{ background: 'rgba(8, 6, 18, 0.78)' }} />
       </div>
 
       {/* 內容 */}
