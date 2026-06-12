@@ -35,8 +35,8 @@ export default async function TrackPage({ params }: Props) {
       </div>
 
       {/* 大圖 Hero — 佔上半螢幕，圓角 */}
-      <div className="relative z-10 w-full flex-shrink-0 px-4 pt-4" style={{ height: '58vh', maxHeight: '500px' }}>
-        <div className="relative w-full h-full rounded-3xl overflow-hidden">
+      <div className="relative z-10 w-full flex-shrink-0" style={{ height: '58vh', maxHeight: '500px', padding: '16px 16px 0' }}>
+        <div className="relative w-full h-full" style={{ borderRadius: '24px', overflow: 'hidden' }}>
           <Image
             src={track.cover}
             alt={track.title}
@@ -46,16 +46,16 @@ export default async function TrackPage({ params }: Props) {
           />
 
           {/* 左上角返回 */}
-          <div className="absolute top-0 left-0 p-4 z-10">
+          <div style={{ position: 'absolute', top: 0, left: 0, padding: '16px', zIndex: 10 }}>
             <BackButton />
           </div>
 
           {/* 左下角歌名，無漸層 */}
-          <div className="absolute bottom-0 left-0 px-5 pb-5">
-            <h1 className="font-zcool text-3xl font-bold mb-0.5 drop-shadow-lg" style={{ color: '#ffffff' }}>
+          <div style={{ position: 'absolute', bottom: 0, left: 0, padding: '0 20px 20px' }}>
+            <h1 className="font-zcool" style={{ color: '#ffffff', fontSize: '2rem', fontWeight: 'bold', marginBottom: '2px', textShadow: '0 2px 12px rgba(0,0,0,0.8)' }}>
               {track.title}
             </h1>
-            <p className="font-playfair italic text-sm drop-shadow-md" style={{ color: 'rgba(255,255,255,0.85)' }}>
+            <p className="font-playfair" style={{ color: 'rgba(255,255,255,0.9)', fontSize: '0.875rem', fontStyle: 'italic', textShadow: '0 1px 8px rgba(0,0,0,0.8)' }}>
               {track.titleEn}
             </p>
           </div>
