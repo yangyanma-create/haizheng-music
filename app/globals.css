@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 隱藏水平滾動條 */
+[style*="overflow-x: scroll"]::-webkit-scrollbar {
+  display: none;
+}
