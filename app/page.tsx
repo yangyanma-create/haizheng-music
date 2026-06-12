@@ -7,8 +7,14 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center px-6 py-14 max-w-lg mx-auto">
       {/* 封面 */}
-      <div className="w-56 h-56 relative mb-8 rounded-2xl overflow-hidden"
-           style={{ boxShadow: '0 0 60px rgba(123, 94, 167, 0.6), 0 20px 40px rgba(0,0,0,0.5)' }}>
+      <div
+          className="relative mb-8 rounded-2xl overflow-hidden flex-shrink-0"
+          style={{
+            width: '224px',
+            height: '224px',
+            boxShadow: '0 0 60px rgba(123, 94, 167, 0.6), 0 20px 40px rgba(0,0,0,0.5)'
+          }}
+        >
         <Image
           src={album.cover}
           alt={album.title}

@@ -33,8 +33,14 @@ export default async function TrackPage({ params }: Props) {
       </Link>
 
       {/* 單曲封面 */}
-      <div className="w-48 h-48 relative mb-6 rounded-2xl overflow-hidden"
-           style={{ boxShadow: '0 0 50px rgba(123, 94, 167, 0.5), 0 15px 30px rgba(0,0,0,0.5)' }}>
+      <div
+          className="relative mb-6 rounded-2xl overflow-hidden flex-shrink-0"
+          style={{
+            width: '192px',
+            height: '192px',
+            boxShadow: '0 0 50px rgba(123, 94, 167, 0.5), 0 15px 30px rgba(0,0,0,0.5)'
+          }}
+        >
         <Image
           src={track.cover}
           alt={track.title}

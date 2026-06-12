@@ -6,7 +6,7 @@ type Props = {
 
 export default function StreamingButtons({ spotify, appleMusic, youtube }: Props) {
   return (
-    <div className="flex flex-col gap-3 w-full max-w-xs">
+    <div className="flex flex-col gap-3 w-full max-w-xs mx-auto">
       <a
         href={spotify}
         target="_blank"
