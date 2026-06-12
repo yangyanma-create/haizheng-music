@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "song-one",
+    "title": "第一首歌名",
+    "cover": "/images/track-1.jpg",
+    "lyrics": "第一段歌詞\n第二行\n\n第二段歌詞\n第二行",
+    "story": "這首歌的創作背景故事，說明靈感來源與創作過程。",
+    "spotify": "https://open.spotify.com/track/REPLACE_ME",
+    "appleMusic": "https://music.apple.com/tw/album/REPLACE_ME",
+    "youtube": "https://youtube.com/watch?v=REPLACE_ME",
+    "buyLink": "https://shopee.tw/haizheng"
+  },
+  {
+    "slug": "song-two",
+    "title": "第二首歌名",
+    "cover": "/images/track-2.jpg",
+    "lyrics": "第一段歌詞\n第二行\n\n第二段歌詞\n第二行",
+    "story": "這首歌的創作背景故事。",
+    "spotify": "https://open.spotify.com/track/REPLACE_ME",
+    "appleMusic": "https://music.apple.com/tw/album/REPLACE_ME",
+    "youtube": "https://youtube.com/watch?v=REPLACE_ME",
+    "buyLink": "https://shopee.tw/haizheng"
+  }
+]
