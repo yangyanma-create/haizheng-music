@@ -90,7 +90,7 @@ export default async function TrackPage({ params }: Props) {
               border: '1px solid rgba(255,255,255,0.08)',
             }}
           >
-            <p className="text-xs text-white tracking-widest uppercase mb-4">歌詞</p>
+            <p className="text-xs tracking-widest uppercase mb-4" style={{ color: '#ffffff' }}>歌詞</p>
             <Lyrics lyrics={track.lyrics} />
           </div>
         )}
@@ -106,8 +106,8 @@ export default async function TrackPage({ params }: Props) {
               border: '1px solid rgba(255,255,255,0.08)',
             }}
           >
-            <p className="text-xs text-white tracking-widest uppercase mb-3">創作背景</p>
-            <p className="text-sm text-white leading-relaxed">{track.story}</p>
+            <p className="text-xs tracking-widest uppercase mb-3" style={{ color: '#ffffff' }}>創作背景</p>
+            <p className="text-sm leading-relaxed" style={{ color: '#ffffff' }}>{track.story}</p>
           </div>
         )}
       </main>
