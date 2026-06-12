@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
-import Link from 'next/link'
 import { getTrackBySlug, getAllSlugs } from '@/lib/tracks'
 import StreamingButtons from '@/components/StreamingButtons'
 import Lyrics from '@/components/Lyrics'
+import BackButton from '@/components/BackButton'
 
 export async function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }))
@@ -37,9 +37,7 @@ export default async function TrackPage({ params }: Props) {
       {/* 內容 */}
       <main className="relative z-10 flex flex-col items-center px-6 py-12 w-full max-w-sm mx-auto">
         {/* 返回 */}
-        <Link href="/" className="self-start text-xs text-white/40 hover:text-white/70 transition mb-8">
-          ← 返回專輯
-        </Link>
+        <BackButton />
 
         {/* 封面 */}
         <div
@@ -62,8 +60,8 @@ export default async function TrackPage({ params }: Props) {
 
         {/* 歌名 */}
         <h1 className="font-playfair text-xl font-bold text-white mb-1 text-center">{track.title}</h1>
-        <p className="text-xs text-white/50 mb-1 text-center">裘海正 · Chiou Haizheng</p>
-        <p className="font-playfair italic text-sm text-white/35 mb-7 text-center">{track.titleEn}</p>
+        <p className="text-xs mb-1 text-center" style={{ color: '#ffffff' }}>裘海正 · Chiou Haizheng</p>
+        <p className="font-playfair italic text-sm mb-7 text-center" style={{ color: '#ffffff' }}>{track.titleEn}</p>
 
         {/* 串流按鈕 */}
         <StreamingButtons
@@ -74,7 +72,7 @@ export default async function TrackPage({ params }: Props) {
 
         {track.buyLink && (
           <a href={track.buyLink} target="_blank" rel="noopener noreferrer"
-             className="mt-3 text-xs text-white/30 hover:text-white/60 transition">
+             className="mt-3 text-xs transition" style={{ color: '#ffffff' }}>
             購買實體專輯
           </a>
         )}

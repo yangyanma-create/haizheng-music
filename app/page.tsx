@@ -48,9 +48,9 @@ export default function Home() {
 
       {/* 頂部標題 */}
       <div className="relative z-10 text-center pt-12 pb-6">
-        <p className="text-xs text-white/40 tracking-widest uppercase mb-2">Chiou Haizheng</p>
+        <p className="text-xs tracking-widest uppercase mb-2" style={{ color: '#ffffff' }}>Chiou Haizheng</p>
         <h1 className="font-playfair text-2xl font-bold text-white tracking-wide">非我勇敢</h1>
-        <p className="text-xs text-white/30 mt-1 tracking-widest italic font-playfair">I Am Not Brave · 2016</p>
+        <p className="text-xs mt-1 tracking-widest italic font-playfair" style={{ color: '#ffffff' }}>I Am Not Brave · 2016</p>
       </div>
 
       {/* 滑動卡片 */}
@@ -107,13 +107,13 @@ export default function Home() {
                     background: 'linear-gradient(180deg, rgba(6,4,16,0.85) 0%, rgba(6,4,16,0.97) 100%)',
                   }}
                 >
-                  <p className="text-[10px] text-white/40 tracking-[0.2em] uppercase mb-1">
+                  <p className="text-[10px] tracking-[0.2em] uppercase mb-1" style={{ color: '#ffffff' }}>
                     {String(index + 1).padStart(2, '0')}
                   </p>
                   <h2 className="font-playfair text-base font-bold text-white leading-tight mb-0.5">
                     {track.title}
                   </h2>
-                  <p className="text-[11px] text-white/50 italic font-playfair">
+                  <p className="text-[11px] italic font-playfair" style={{ color: '#ffffff' }}>
                     {track.titleEn}
                   </p>
                 </div>
@@ -140,10 +140,10 @@ export default function Home() {
               transform: activeIndex === tracks.length ? 'scale(1) translateY(0px)' : 'scale(0.88) translateY(12px)',
             }}
           >
-            <p className="text-white/30 text-4xl mb-4 font-light">≡</p>
-            <p className="font-playfair text-lg font-bold text-white mb-1">Full Album</p>
-            <p className="text-white/40 text-xs tracking-widest">完整曲目</p>
-            <p className="text-white/25 text-xs mt-2">{tracks.length} Tracks</p>
+            <p className="text-4xl mb-4 font-light" style={{ color: '#ffffff' }}>≡</p>
+            <p className="font-playfair text-lg font-bold mb-1" style={{ color: '#ffffff' }}>Full Album</p>
+            <p className="text-xs tracking-widest" style={{ color: '#ffffff' }}>完整曲目</p>
+            <p className="text-xs mt-2" style={{ color: '#ffffff' }}>{tracks.length} Tracks</p>
           </div>
         </Link>
 
@@ -165,7 +165,7 @@ export default function Home() {
             />
           ))}
         </div>
-        <p className="text-[10px] text-white/30 tracking-widest uppercase">Swipe to explore</p>
+        <p className="text-[10px] tracking-widest uppercase" style={{ color: '#ffffff' }}>Swipe to explore</p>
       </div>
     </div>
   )

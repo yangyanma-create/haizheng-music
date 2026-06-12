@@ -12,7 +12,7 @@ export default function TracklistPage() {
       </div>
 
       <main className="relative z-10 flex flex-col px-6 py-12 max-w-sm mx-auto w-full">
-        <Link href="/" className="text-xs text-white/40 hover:text-white/70 transition mb-8">← 返回</Link>
+        <Link href="/" className="text-xs transition mb-8" style={{ color: '#ffffff' }}>← 返回</Link>
 
         {/* 專輯封面 + 名稱 */}
         <div className="flex items-center gap-4 mb-8">
@@ -21,7 +21,7 @@ export default function TracklistPage() {
           </div>
           <div>
             <h1 className="text-lg font-bold text-white">{album.title}</h1>
-            <p className="text-xs text-white/40">裘海正 · {album.year}</p>
+            <p className="text-xs" style={{ color: '#ffffff' }}>裘海正 · {album.year}</p>
           </div>
         </div>
 
@@ -34,9 +34,9 @@ export default function TracklistPage() {
               className="flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors"
               style={{ borderBottom: index < tracks.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none' }}
             >
-              <span className="w-5 text-right text-xs text-white/30 flex-shrink-0">{index + 1}</span>
-              <span className="flex-1 text-sm text-white/90 font-medium">{track.title}</span>
-              <svg className="w-3 h-3 text-white/30 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <span className="w-5 text-right text-xs flex-shrink-0" style={{ color: '#ffffff' }}>{index + 1}</span>
+              <span className="flex-1 text-sm font-medium" style={{ color: '#ffffff' }}>{track.title}</span>
+              <svg className="w-3 h-3 flex-shrink-0" style={{ color: '#ffffff' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </Link>

@@ -15,9 +15,9 @@ export default function TrackList({ tracks }: Props) {
             href={`/track/${track.slug}`}
             className="flex items-center gap-3 px-4 py-3 hover:bg-white/[0.05] transition-colors"
           >
-            <span className="w-5 text-right text-xs text-white/30 flex-shrink-0">{index + 1}</span>
-            <span className="flex-1 text-sm text-white/90 font-medium">{track.title}</span>
-            <svg className="w-3 h-3 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <span className="w-5 text-right text-xs flex-shrink-0" style={{ color: '#ffffff' }}>{index + 1}</span>
+            <span className="flex-1 text-sm font-medium" style={{ color: '#ffffff' }}>{track.title}</span>
+            <svg className="w-3 h-3" style={{ color: '#ffffff' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </Link>

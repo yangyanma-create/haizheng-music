@@ -23,8 +23,8 @@ export default function SocialLinks({ social, buyLink }: Props) {
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-4 py-1.5 rounded-full text-xs text-white/50 transition-all hover:text-white/80"
-          style={{ border: '1px solid rgba(255,255,255,0.15)' }}
+          className="px-4 py-1.5 rounded-full text-xs transition-all"
+          style={{ border: '1px solid rgba(255,255,255,0.15)', color: '#ffffff' }}
         >
           {link.label}
         </a>
