@@ -43,20 +43,20 @@ export default function Home() {
           style={{ filter: 'blur(60px)' }}
           priority
         />
-        <div className="absolute inset-0" style={{ background: 'rgba(6, 4, 16, 0.82)' }} />
+        <div className="absolute inset-0" style={{ background: 'rgba(6, 4, 16, 0.85)' }} />
       </div>
 
       {/* 頂部標題 */}
-      <div className="relative z-10 text-center pt-12 pb-6">
-        <p className="text-xs tracking-widest uppercase mb-2" style={{ color: '#ffffff' }}>Chiou Haizheng</p>
-        <h1 className="font-playfair text-2xl font-bold text-white tracking-wide">非我勇敢</h1>
-        <p className="text-xs mt-1 tracking-widest italic font-playfair" style={{ color: '#ffffff' }}>I Am Not Brave · 2016</p>
+      <div className="relative z-10 text-center pt-12 pb-4">
+        <p className="text-xs tracking-widest uppercase mb-1" style={{ color: 'rgba(255,255,255,0.6)' }}>Chiou Haizheng</p>
+        <h1 className="font-playfair text-2xl font-bold tracking-wide" style={{ color: '#ffffff' }}>非我勇敢</h1>
+        <p className="text-xs mt-1 tracking-widest italic font-playfair" style={{ color: 'rgba(255,255,255,0.6)' }}>I Am Not Brave · 2016</p>
       </div>
 
       {/* 滑動卡片 */}
       <div
         ref={scrollRef}
-        className="relative z-10 flex items-center py-4"
+        className="relative z-10 flex items-center py-6"
         style={{
           overflowX: 'scroll',
           scrollSnapType: 'x mandatory',
@@ -65,7 +65,7 @@ export default function Home() {
           WebkitOverflowScrolling: 'touch',
         }}
       >
-        <div className="flex-shrink-0" style={{ width: 'calc(50vw - 120px)' }} />
+        <div className="flex-shrink-0" style={{ width: 'calc(50vw - 130px)' }} />
 
         {tracks.map((track, index) => {
           const isActive = activeIndex === index
@@ -78,42 +78,39 @@ export default function Home() {
               style={{ scrollSnapAlign: 'center', color: 'inherit', textDecoration: 'none' }}
             >
               <div
-                className="rounded-2xl overflow-hidden transition-all duration-500 flex flex-col"
+                className="rounded-3xl overflow-hidden transition-all duration-500 relative"
                 style={{
-                  width: '240px',
-                  height: '340px',
+                  width: '260px',
+                  height: '360px',
                   boxShadow: isActive
-                    ? '0 24px 64px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.12)'
+                    ? '0 32px 80px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.1)'
                     : '0 8px 24px rgba(0,0,0,0.4)',
-                  opacity: isActive ? 1 : 0.45,
-                  transform: isActive ? 'scale(1) translateY(0px)' : 'scale(0.88) translateY(12px)',
+                  opacity: isActive ? 1 : 0.5,
+                  transform: isActive ? 'scale(1) translateY(0px)' : 'scale(0.88) translateY(16px)',
                 }}
               >
-                {/* 封面圖片 — 上方 75% */}
-                <div className="relative flex-1">
-                  <Image
-                    src={track.cover}
-                    alt={track.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+                {/* 封面圖片 — 全滿 */}
+                <Image
+                  src={track.cover}
+                  alt={track.title}
+                  fill
+                  className="object-cover"
+                />
 
-                {/* 資訊區 — 下方固定高度 */}
+                {/* 底部漸層 + 歌名 */}
                 <div
-                  className="flex-shrink-0 px-4 py-4"
+                  className="absolute inset-x-0 bottom-0 px-5 pb-5 pt-16"
                   style={{
-                    height: '96px',
-                    background: 'linear-gradient(180deg, rgba(6,4,16,0.85) 0%, rgba(6,4,16,0.97) 100%)',
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.4) 60%, transparent 100%)',
                   }}
                 >
-                  <p className="text-[10px] tracking-[0.2em] uppercase mb-1" style={{ color: '#ffffff' }}>
+                  <p className="text-[10px] tracking-[0.2em] uppercase mb-1" style={{ color: 'rgba(255,255,255,0.6)' }}>
                     {String(index + 1).padStart(2, '0')}
                   </p>
-                  <h2 className="font-playfair text-base font-bold text-white leading-tight mb-0.5">
+                  <h2 className="font-playfair text-xl font-bold leading-tight mb-0.5" style={{ color: '#ffffff' }}>
                     {track.title}
                   </h2>
-                  <p className="text-[11px] italic font-playfair" style={{ color: '#ffffff' }}>
+                  <p className="text-xs italic font-playfair" style={{ color: 'rgba(255,255,255,0.7)' }}>
                     {track.titleEn}
                   </p>
                 </div>
@@ -130,24 +127,24 @@ export default function Home() {
           style={{ scrollSnapAlign: 'center', color: 'inherit', textDecoration: 'none' }}
         >
           <div
-            className="rounded-2xl flex flex-col items-center justify-center transition-all duration-500"
+            className="rounded-3xl flex flex-col items-center justify-center transition-all duration-500"
             style={{
-              width: '240px',
-              height: '340px',
-              background: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              opacity: activeIndex === tracks.length ? 1 : 0.45,
-              transform: activeIndex === tracks.length ? 'scale(1) translateY(0px)' : 'scale(0.88) translateY(12px)',
+              width: '260px',
+              height: '360px',
+              background: 'rgba(255,255,255,0.06)',
+              border: '1px solid rgba(255,255,255,0.12)',
+              opacity: activeIndex === tracks.length ? 1 : 0.5,
+              transform: activeIndex === tracks.length ? 'scale(1) translateY(0px)' : 'scale(0.88) translateY(16px)',
             }}
           >
-            <p className="text-4xl mb-4 font-light" style={{ color: '#ffffff' }}>≡</p>
-            <p className="font-playfair text-lg font-bold mb-1" style={{ color: '#ffffff' }}>Full Album</p>
-            <p className="text-xs tracking-widest" style={{ color: '#ffffff' }}>完整曲目</p>
-            <p className="text-xs mt-2" style={{ color: '#ffffff' }}>{tracks.length} Tracks</p>
+            <p className="text-5xl mb-5 font-light" style={{ color: '#ffffff' }}>≡</p>
+            <p className="font-playfair text-xl font-bold mb-1" style={{ color: '#ffffff' }}>Full Album</p>
+            <p className="text-xs tracking-widest" style={{ color: 'rgba(255,255,255,0.6)' }}>完整曲目</p>
+            <p className="text-xs mt-2" style={{ color: 'rgba(255,255,255,0.4)' }}>{tracks.length} Tracks</p>
           </div>
         </Link>
 
-        <div className="flex-shrink-0" style={{ width: 'calc(50vw - 120px)' }} />
+        <div className="flex-shrink-0" style={{ width: 'calc(50vw - 130px)' }} />
       </div>
 
       {/* 底部指示器 */}
@@ -160,12 +157,12 @@ export default function Home() {
               style={{
                 width: activeIndex === i ? '18px' : '5px',
                 height: '5px',
-                background: activeIndex === i ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.2)',
+                background: activeIndex === i ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.25)',
               }}
             />
           ))}
         </div>
-        <p className="text-[10px] tracking-widest uppercase" style={{ color: '#ffffff' }}>Swipe to explore</p>
+        <p className="text-[10px] tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>Swipe to explore</p>
       </div>
     </div>
   )
