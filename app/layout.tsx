@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Ma_Shan_Zheng } from 'next/font/google'
+import { Playfair_Display, Noto_Serif_TC } from 'next/font/google'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -7,9 +7,9 @@ const playfair = Playfair_Display({
   variable: '--font-playfair',
 })
 
-const zcool = Ma_Shan_Zheng({
+const zcool = Noto_Serif_TC({
   subsets: ['latin'],
-  weight: '400',
+  weight: ['300', '400'],
   variable: '--font-zcool',
 })
 
