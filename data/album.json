@@ -1,12 +1,12 @@
 {
-  "title": "專輯名稱",
-  "year": "2026",
+  "title": "非我勇敢",
+  "year": "2016",
   "cover": "/images/album-cover.jpg",
-  "description": "專輯介紹文字",
+  "description": "裘海正 2016 年專輯",
   "social": {
-    "instagram": "https://instagram.com/haizheng",
-    "facebook": "https://facebook.com/haizheng",
-    "website": "https://haizheng.com"
+    "instagram": "",
+    "facebook": "",
+    "website": ""
   },
-  "buyLink": "https://shopee.tw/haizheng"
+  "buyLink": ""
 }

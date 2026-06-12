@@ -1,24 +1,79 @@
 [
   {
-    "slug": "song-one",
-    "title": "第一首歌名",
-    "cover": "/images/track-1.jpg",
-    "lyrics": "第一段歌詞\n第二行\n\n第二段歌詞\n第二行",
-    "story": "這首歌的創作背景故事，說明靈感來源與創作過程。",
-    "spotify": "https://open.spotify.com/track/REPLACE_ME",
-    "appleMusic": "https://music.apple.com/tw/album/REPLACE_ME",
-    "youtube": "https://youtube.com/watch?v=REPLACE_ME",
-    "buyLink": "https://shopee.tw/haizheng"
+    "slug": "xuqu",
+    "title": "序曲",
+    "cover": "/images/album-cover.jpg",
+    "lyrics": "（歌詞待補）",
+    "story": "（創作背景待補）",
+    "spotify": "https://open.spotify.com/track/72rYVObd5H2eGuNxZnQWX4",
+    "appleMusic": "",
+    "youtube": "https://www.youtube.com/watch?v=JKDlqiNG4a4",
+    "buyLink": ""
   },
   {
-    "slug": "song-two",
-    "title": "第二首歌名",
-    "cover": "/images/track-2.jpg",
-    "lyrics": "第一段歌詞\n第二行\n\n第二段歌詞\n第二行",
-    "story": "這首歌的創作背景故事。",
-    "spotify": "https://open.spotify.com/track/REPLACE_ME",
-    "appleMusic": "https://music.apple.com/tw/album/REPLACE_ME",
-    "youtube": "https://youtube.com/watch?v=REPLACE_ME",
-    "buyLink": "https://shopee.tw/haizheng"
+    "slug": "fei-wo-yong-gan",
+    "title": "非我勇敢",
+    "cover": "/images/album-cover.jpg",
+    "lyrics": "（歌詞待補）",
+    "story": "（創作背景待補）",
+    "spotify": "https://open.spotify.com/track/3oSK4pA3057rIvITd3NRvc",
+    "appleMusic": "",
+    "youtube": "https://www.youtube.com/watch?v=_K61ZdyGc1U",
+    "buyLink": ""
+  },
+  {
+    "slug": "ni-guo-de-zen-yang",
+    "title": "你過的怎樣",
+    "cover": "/images/album-cover.jpg",
+    "lyrics": "（歌詞待補）",
+    "story": "（創作背景待補）",
+    "spotify": "https://open.spotify.com/track/3lgrEMXVgp4yt7Jh2w6GvS",
+    "appleMusic": "",
+    "youtube": "https://www.youtube.com/watch?v=P-xHWDA2mJY",
+    "buyLink": ""
+  },
+  {
+    "slug": "wo-xiang-xin-ni-yi-ding-ke-yi",
+    "title": "我相信你一定可以",
+    "cover": "/images/album-cover.jpg",
+    "lyrics": "（歌詞待補）",
+    "story": "（創作背景待補）",
+    "spotify": "https://open.spotify.com/track/1YqUW1A6RUCPCobRuYcF0Q",
+    "appleMusic": "",
+    "youtube": "https://www.youtube.com/watch?v=2Ow04-_P3Oc",
+    "buyLink": ""
+  },
+  {
+    "slug": "wo-hen-xing-fu",
+    "title": "我很幸福",
+    "cover": "/images/album-cover.jpg",
+    "lyrics": "（歌詞待補）",
+    "story": "（創作背景待補）",
+    "spotify": "https://open.spotify.com/track/7aFgaVY34s1dtPexYNk4Tv",
+    "appleMusic": "",
+    "youtube": "https://www.youtube.com/watch?v=sB_MimbO6Bw",
+    "buyLink": ""
+  },
+  {
+    "slug": "wo-yi-dong-de-shi",
+    "title": "我已懂的事",
+    "cover": "/images/album-cover.jpg",
+    "lyrics": "（歌詞待補）",
+    "story": "（創作背景待補）",
+    "spotify": "https://open.spotify.com/track/1K0O7NZuCetRjMFxhNDsm9",
+    "appleMusic": "",
+    "youtube": "https://www.youtube.com/watch?v=WPXcmu6uuEg",
+    "buyLink": ""
+  },
+  {
+    "slug": "wang-zi-de-qi-dao",
+    "title": "王子的祈禱",
+    "cover": "/images/album-cover.jpg",
+    "lyrics": "（歌詞待補）",
+    "story": "（創作背景待補）",
+    "spotify": "https://open.spotify.com/track/3SoNjJKXMZmLiqkXZdigbY",
+    "appleMusic": "",
+    "youtube": "https://www.youtube.com/watch?v=UX3TGQnu6mw",
+    "buyLink": ""
   }
 ]
