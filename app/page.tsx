@@ -49,7 +49,7 @@ export default function Home() {
       {/* 頂部標題 */}
       <div className="relative z-10 text-center pt-12 pb-4">
         <p className="text-xs tracking-widest uppercase mb-1" style={{ color: 'rgba(255,255,255,0.6)' }}>Chiou Haizheng</p>
-        <h1 className="font-playfair text-2xl font-bold tracking-wide" style={{ color: '#ffffff' }}>非我勇敢</h1>
+        <h1 className="font-zcool text-2xl font-bold tracking-wide" style={{ color: '#ffffff' }}>非我勇敢</h1>
         <p className="text-xs mt-1 tracking-widest italic font-playfair" style={{ color: 'rgba(255,255,255,0.6)' }}>I Am Not Brave · 2016</p>
       </div>
 
@@ -107,7 +107,7 @@ export default function Home() {
                   <p className="text-[10px] tracking-[0.2em] uppercase mb-1" style={{ color: 'rgba(255,255,255,0.6)' }}>
                     {String(index + 1).padStart(2, '0')}
                   </p>
-                  <h2 className="font-playfair text-xl font-bold leading-tight mb-0.5" style={{ color: '#ffffff' }}>
+                  <h2 className="font-zcool text-xl font-bold leading-tight mb-0.5" style={{ color: '#ffffff' }}>
                     {track.title}
                   </h2>
                   <p className="text-xs italic font-playfair" style={{ color: 'rgba(255,255,255,0.7)' }}>

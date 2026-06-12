@@ -1,10 +1,16 @@
 import type { Metadata } from 'next'
-import { Playfair_Display } from 'next/font/google'
+import { Playfair_Display, ZCOOL_XiaoWei } from 'next/font/google'
 import './globals.css'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
+})
+
+const zcool = ZCOOL_XiaoWei({
+  subsets: ['chinese-simplified'],
+  weight: '400',
+  variable: '--font-zcool',
 })
 
 export const metadata: Metadata = {
@@ -18,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="zh-TW" className={playfair.variable}>
+    <html lang="zh-TW" className={`${playfair.variable} ${zcool.variable}`}>
       <body className="text-white min-h-screen" style={{ background: '#0a0614' }}>
         {children}
       </body>

@@ -34,32 +34,31 @@ export default async function TrackPage({ params }: Props) {
         <div className="absolute inset-0" style={{ background: 'rgba(6, 4, 16, 0.85)' }} />
       </div>
 
-      {/* 大圖 Hero — 佔上半螢幕 */}
-      <div className="relative z-10 w-full flex-shrink-0" style={{ height: '55vh', maxHeight: '480px' }}>
-        <Image
-          src={track.cover}
-          alt={track.title}
-          fill
-          className="object-cover"
-          priority
-        />
+      {/* 大圖 Hero — 佔上半螢幕，圓角 */}
+      <div className="relative z-10 w-full flex-shrink-0 px-4 pt-4" style={{ height: '58vh', maxHeight: '500px' }}>
+        <div className="relative w-full h-full rounded-3xl overflow-hidden">
+          <Image
+            src={track.cover}
+            alt={track.title}
+            fill
+            className="object-cover"
+            priority
+          />
 
-        {/* 左上角返回 */}
-        <div className="absolute top-0 left-0 p-5 z-10">
-          <BackButton />
-        </div>
+          {/* 左上角返回 */}
+          <div className="absolute top-0 left-0 p-4 z-10">
+            <BackButton />
+          </div>
 
-        {/* 底部漸層 + 歌名 */}
-        <div
-          className="absolute inset-x-0 bottom-0 px-6 pb-6 pt-24"
-          style={{
-            background: 'linear-gradient(to top, rgba(6,4,16,1) 0%, rgba(6,4,16,0.6) 50%, transparent 100%)',
-          }}
-        >
-          <h1 className="font-playfair text-3xl font-bold mb-1" style={{ color: '#ffffff' }}>
-            {track.title}
-          </h1>
-          <p className="text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>裘海正 · {track.titleEn}</p>
+          {/* 左下角歌名，無漸層 */}
+          <div className="absolute bottom-0 left-0 px-5 pb-5">
+            <h1 className="font-zcool text-3xl font-bold mb-0.5 drop-shadow-lg" style={{ color: '#ffffff' }}>
+              {track.title}
+            </h1>
+            <p className="font-playfair italic text-sm drop-shadow-md" style={{ color: 'rgba(255,255,255,0.85)' }}>
+              {track.titleEn}
+            </p>
+          </div>
         </div>
       </div>
 
