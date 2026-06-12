@@ -78,10 +78,13 @@ export default function Home() {
               style={{ scrollSnapAlign: 'center', color: 'inherit', textDecoration: 'none' }}
             >
               <div
-                className="rounded-3xl overflow-hidden transition-all duration-500 relative"
                 style={{
                   width: '260px',
                   height: '360px',
+                  borderRadius: '24px',
+                  overflow: 'hidden',
+                  position: 'relative',
+                  transition: 'all 0.5s',
                   boxShadow: isActive
                     ? '0 32px 80px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.1)'
                     : '0 8px 24px rgba(0,0,0,0.4)',
@@ -127,10 +130,15 @@ export default function Home() {
           style={{ scrollSnapAlign: 'center', color: 'inherit', textDecoration: 'none' }}
         >
           <div
-            className="rounded-3xl flex flex-col items-center justify-center transition-all duration-500"
             style={{
               width: '260px',
               height: '360px',
+              borderRadius: '24px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              transition: 'all 0.5s',
               background: 'rgba(255,255,255,0.06)',
               border: '1px solid rgba(255,255,255,0.12)',
               opacity: activeIndex === tracks.length ? 1 : 0.5,
