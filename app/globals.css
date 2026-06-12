@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 隱藏水平滾動條 */
 [style*="overflow-x: scroll"]::-webkit-scrollbar {
   display: none;
+}
+
+.font-playfair {
+  font-family: var(--font-playfair), Georgia, serif;
 }

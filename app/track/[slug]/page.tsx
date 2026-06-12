@@ -61,8 +61,9 @@ export default async function TrackPage({ params }: Props) {
         </div>
 
         {/* 歌名 */}
-        <h1 className="text-xl font-bold text-white mb-1 text-center">{track.title}</h1>
-        <p className="text-xs text-white/50 mb-7 text-center">裘海正</p>
+        <h1 className="font-playfair text-xl font-bold text-white mb-1 text-center">{track.title}</h1>
+        <p className="text-xs text-white/50 mb-1 text-center">裘海正 · Chiou Haizheng</p>
+        <p className="font-playfair italic text-sm text-white/35 mb-7 text-center">{track.titleEn}</p>
 
         {/* 串流按鈕 */}
         <StreamingButtons

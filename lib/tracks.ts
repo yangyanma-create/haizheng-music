@@ -4,6 +4,7 @@ import tracksData from '@/data/tracks.json'
 export type Track = {
   slug: string
   title: string
+  titleEn: string
   cover: string
   lyrics: string
   story: string
